@@ -7,7 +7,7 @@ from stepfunctions.insertMetadataInDynamoDB import insertMetadataInDynamoDB
 def main():
 
     bucket = 'nflx-upload-storage' # 'netflix-for-me-nflx'
-    filename = "/Users/joesurf/Downloads/gamingTestVideo.mp4"
+    filename = "/Users/joesurf/Downloads/dirtyTestVideo.mp4"
     # object_name = os.path.basename(filename)
 
     # Create object key

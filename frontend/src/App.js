@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 
-import Row from './Row';
-import Banner from './Banner.js';
+import Row from './components/Row';
+import Banner from './components/Banner';
 import requests from './requests';
-import Nav from './Nav';
+import Nav from './components/Nav';
 
-// import ReactVideoPlayer from './components/ReactVideoPlayer';
+import ReactVideoPlayer from './components/ReactVideoPlayer';
+
+import PersonalRow from './components/PersonalRow'
 
 
 function App() {
@@ -25,6 +27,10 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumantaries} />
+      {/* <Row title="Personal" fetchUrl={} /> */}
+      <PersonalRow></PersonalRow>
+
+      {/* <ReactVideoPlayer></ReactVideoPlayer> */}
     </div>
   );
 }

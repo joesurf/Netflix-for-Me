@@ -22,7 +22,7 @@ def upload_file(file_name, bucket, object_name=None):
     try:
         response = s3_client.upload_file(
             file_name, bucket, object_name,
-            # ExtraArgs={'Metadata': metadata}
+            ExtraArgs={'Metadata': {"ContentType": 'video/mp4'}}
         )
     except ClientError as e:
         logging.error(e)
