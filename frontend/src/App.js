@@ -6,7 +6,7 @@ import Banner from './components/Banner';
 import requests from './requests';
 import Nav from './components/Nav';
 
-import ReactVideoPlayer from './components/ReactVideoPlayer';
+// import ReactVideoPlayer from './components/ReactVideoPlayer';
 
 import PersonalRow from './components/PersonalRow'
 
