@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactVideoPlayer from '../components/ReactVideoPlayer';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 function VideoPage() {
     const { id } = useParams();
@@ -16,8 +16,11 @@ function VideoPage() {
         // Only for testing purposes
 
         try {
-            const response = await axios.get(`http://54.90.184.160/videos/${id}`);
-            setMovie(response.data);
+            // const response = await axios.get(`https://54.90.184.160/videos/${id}`);
+            // setMovie(response.data);
+            setMovie({
+                "s3_video_source": "https://www.sgunchained.com/The%20Demi-Gods%20and%20Semi-Devils%20E1.mp4"
+            })
         } catch (error) { 
             console.log(error);
         }
