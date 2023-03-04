@@ -4,31 +4,25 @@ import ReactVideoPlayer from '../components/ReactVideoPlayer';
 
 import axios from 'axios';
 
-const base_url = "https://www.sgunchained.com/";
-
-function VideoPage({ }) {
+function VideoPage() {
     const { id } = useParams();
     let [movie, setMovie] = useState({});
 
     useEffect(() => {
         getMovie(id);
-    }, [])
+    }, [id])
 
     async function getMovie(id) {
         // Only for testing purposes
-        id = "The Demi-Gods and Semi-Devils E1.mp4";
 
         try {
-            const response = await axios.get(`http://localhost:8000/videos/${id}`);
+            const response = await axios.get(`http://54.90.184.160/videos/${id}`);
             setMovie(response.data);
-            // console.log(response.data['s3_video_source']);
         } catch (error) { 
             console.log(error);
         }
     }
 
-    console.log("MOVIE");
-    console.log(movie);
     if (Object.keys(movie).length === 0) {
         return <h1>Still loading...</h1>
     }
