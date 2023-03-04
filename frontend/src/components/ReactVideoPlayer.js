@@ -4,12 +4,12 @@ import 'react-html5video/dist/styles.css';
 
 
 
-const ReactVideoPlayer = () => {
+const ReactVideoPlayer = ({ src, alt}) => {
+    console.log(src);
+
     return (
         <DefaultPlayer autoPlay loop>
-
-
-            <source src={ "https://www.sgunchained.com/gamingTestVideo.mp4" } type="video/webm" />
+            <source src={ src } type="video/webm" />
         </DefaultPlayer>
     );
 };
