@@ -1,38 +1,26 @@
-import React from 'react';
-import './App.css';
+import React, { Fragment } from 'react';
 
-import Row from './components/Row';
-import Banner from './components/Banner';
-import requests from './requests';
-import Nav from './components/Nav';
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+} from "react-router-dom";
 
-// import ReactVideoPlayer from './components/ReactVideoPlayer';
-
-import PersonalRow from './components/PersonalRow'
-
+import HomePage from './pages/HomePage';
+import VideoPage from './pages/VideoPage';
 
 function App() {
   return (
-    <div className="app">
-      <Nav></Nav>
-      
-      <Banner></Banner>
+    <Fragment>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/videos/:id" element={<VideoPage />} />
 
-      <Row title="NETFLIX ORIGINALS" fetchUrl={requests.fetchNetflixOriginals} isLargeRow />
-      
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
-      <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
-      <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
-      <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchUrl={requests.fetchDocumantaries} />
-      {/* <Row title="Personal" fetchUrl={} /> */}
-      <PersonalRow></PersonalRow>
-
-      {/* <ReactVideoPlayer></ReactVideoPlayer> */}
-    </div>
-  );
+        </Routes>
+      </BrowserRouter>
+    </Fragment>
+  )
 }
 
-export default App;
+export default App
